@@ -24,7 +24,7 @@ make run
 
 Open your browser and go to [localhost:8000](http://localhost:800/)
 
-## Run tests and check coverage
+## Run tests with coverage
 
 ```shell
 make test
@@ -36,7 +36,7 @@ make test
 make coverage
 ```
 
-Open htmlcov/index.html in your browser
+Open htmlcov/index.html in your browser to see the coverage report
 
 ## Lint code with flake8
 
