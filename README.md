@@ -38,7 +38,7 @@ make coverage
 
 Open htmlcov/index.html in your browser
 
-## Lint with flake8
+## Lint code with flake8
 
 ```shell
 make lint
