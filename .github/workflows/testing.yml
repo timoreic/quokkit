@@ -21,19 +21,23 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Install pipenv
         run: |
           python -m pip install --upgrade pipenv wheel
           pipenv install
 
+      - name: Install dependencies
+        run: |
+          pipenv install --deploy --dev
+
       - name: Run tests
         run: |
-          pipenv coverage run --source='.' manage.py test */tests
+          pipenv run coverage run --source='.' manage.py test */tests
 
       - name: Lint with flake8
         run: |
-          pipenv flake8
+          pipenv run flake8
 
       - name: Print coverage report
         run: |
-          pipenv coverage report
+          pipenv run coverage report
