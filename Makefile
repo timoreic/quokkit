@@ -40,3 +40,7 @@ migrate:
 # target: superuser - calls the "createsuperuser" django command
 superuser:
 		python manage.py createsuperuser
+
+# target: lint - Lint with flake8
+lint:
+		flake8

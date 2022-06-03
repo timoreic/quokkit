@@ -11,19 +11,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RenameField(
-            model_name='user',
-            old_name='name',
-            new_name='first_name',
-        ),
+            model_name='user', old_name='name', new_name='first_name',),
         migrations.AddField(
-            model_name='user',
-            name='handle',
-            field=models.CharField(default='admin', max_length=254, unique=True),
-            preserve_default=False,
-        ),
+            model_name='user', name='handle', field=models.CharField(
+                default='admin', max_length=254, unique=True),
+            preserve_default=False,),
         migrations.AddField(
-            model_name='user',
-            name='last_name',
-            field=models.CharField(blank=True, max_length=254, null=True),
-        ),
-    ]
+            model_name='user', name='last_name', field=models.CharField(
+                blank=True, max_length=254, null=True),), ]
