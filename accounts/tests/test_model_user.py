@@ -30,3 +30,12 @@ class UserTests(TestCase):
         self.assertTrue(self.superuser.is_active)
         self.assertTrue(self.superuser.is_staff)
         self.assertTrue(self.superuser.is_superuser)
+
+    def test_divide(self):
+        with self.assertRaises(ValueError):
+            User = get_user_model()
+            self.user = User.objects.create_user(
+                email='',
+                first_name='Test',
+                password='testpass123'
+            )
