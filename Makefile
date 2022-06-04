@@ -30,7 +30,7 @@ coverage:
 		coverage html
 
 # target: migration - calls the "makemigrations" django command
-migration:
+migrations:
 		python manage.py makemigrations
 
 # target: migrate - calls the "migrate" django command
