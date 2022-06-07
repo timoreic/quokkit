@@ -9,6 +9,7 @@ django-environ = "*"
 coverage = "*"
 flake8 = "*"
 django-crispy-forms = "*"
+django-allauth = "*"
 
 [dev-packages]
 
