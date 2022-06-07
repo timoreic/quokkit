@@ -11,6 +11,7 @@ on:
 
 env:
   SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  DJANGO_DEBUG: ${{ secrets.DJANGO_DEBUG }}
 
 jobs:
   build:
