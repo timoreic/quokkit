@@ -1,23 +1,26 @@
-from django.test import SimpleTestCase
+from django.test import TestCase
 from django.urls import reverse, resolve
-from accounts.views import SignupPageView
+from django.contrib.auth import get_user_model
 
 
-class SignupPageTests(SimpleTestCase):
+class SignupPageTests(TestCase):
 
     def setUp(self):
-        url = reverse('signup')
+        url = reverse('account_signup')
         self.response = self.client.get(url)
 
-    def test_home_status_code(self):
+    def test_signup_status_code(self):
         self.assertEqual(self.response.status_code, 200)
 
-    def test_home_template(self):
-        self.assertTemplateUsed(self.response, 'registration/signup.html')
+    def test_signup_template(self):
+        self.assertTemplateUsed(self.response, 'account/signup.html')
 
-    def test_home_url_resolves_signuppageview(self):
-        view = resolve('/accounts/signup/')
-        self.assertEqual(
-            view.func.__name__,
-            SignupPageView.as_view().__name__
+    def test_signup_form(self):
+        new_user = get_user_model().objects.create_user(
+            'newuser',
+            'newuser@email.com'
         )
+        self.assertEqual(get_user_model().objects.all().count(), 1)
+        self.assertEqual(get_user_model().objects.all()[0].username, 'newuser')
+        self.assertEqual(
+            get_user_model().objects.all()[0].email, 'newuser@email.com')
