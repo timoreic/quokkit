@@ -3,7 +3,7 @@ from django.urls import reverse, resolve
 from django.contrib.auth import get_user_model
 
 
-class SignupPageTests(TestCase):
+class SignupTests(TestCase):
 
     def setUp(self):
         url = reverse('account_signup')
