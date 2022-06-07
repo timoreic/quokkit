@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.urls import reverse, resolve
+from django.urls import reverse
 from django.contrib.auth import get_user_model
 
 
@@ -16,7 +16,7 @@ class SignupTests(TestCase):
         self.assertTemplateUsed(self.response, 'account/signup.html')
 
     def test_signup_form(self):
-        new_user = get_user_model().objects.create_user(
+        get_user_model().objects.create_user(
             'newuser',
             'newuser@email.com'
         )
