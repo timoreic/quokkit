@@ -1,0 +1,4 @@
+{% load il8n %}
+{% autoscape off %}
+{% blocktrans %}Verify Your E-mail Address{% blocktrans %}
+{% endautoscape %}
