@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Instruction
+from .models import Instruction, Step, Item, Category
 
-
-class InstructionAdmin(admin.ModelAdmin):
-    list_display = ("title", "subtitle", "is_public")
+admin.site.register(Instruction)
+admin.site.register(Step)
+admin.site.register(Item)
+admin.site.register(Category)
