@@ -64,7 +64,6 @@ class Category(models.Model):
     )
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    instruction_count = models.IntegerField()
     instructions = models.ManyToManyField(Instruction)
 
     def __str__(self):
