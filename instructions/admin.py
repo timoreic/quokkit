@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Instruction
 
-# Register your models here.
+
+class InstructionAdmin(admin.ModelAdmin):
+    list_display = ("title", "subtitle", "is_public")
