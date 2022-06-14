@@ -15,49 +15,45 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='instruction',
-            name='user',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
-            preserve_default=False,
-        ),
+            model_name='instruction', name='user', field=models.ForeignKey(
+                default=1, on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL),
+            preserve_default=False,),
         migrations.AlterField(
-            model_name='instruction',
-            name='description',
-            field=models.TextField(blank=True),
-        ),
+            model_name='instruction', name='description',
+            field=models.TextField(blank=True),),
         migrations.AlterField(
-            model_name='instruction',
-            name='subtitle',
-            field=models.CharField(blank=True, max_length=200),
-        ),
+            model_name='instruction', name='subtitle', field=models.CharField(
+                blank=True, max_length=200),),
         migrations.CreateModel(
             name='Step',
-            fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+            fields=[('id', models.UUIDField(
+                default=uuid.uuid4, editable=False, primary_key=True,
+                serialize=False)),
                 ('title', models.CharField(max_length=200)),
                 ('description', models.TextField(blank=True)),
                 ('number', models.IntegerField()),
-                ('instruction', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='instructions.instruction')),
-            ],
-        ),
+                ('instruction', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to='instructions.instruction')), ],),
         migrations.CreateModel(
             name='Item',
-            fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+            fields=[('id', models.UUIDField(
+                default=uuid.uuid4, editable=False, primary_key=True,
+                serialize=False)),
                 ('title', models.CharField(max_length=200)),
                 ('description', models.TextField(blank=True)),
                 ('amount', models.CharField(max_length=200)),
-                ('instruction', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='instructions.instruction')),
-            ],
-        ),
+                ('instruction', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    to='instructions.instruction')), ],),
         migrations.CreateModel(
             name='Category',
-            fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+            fields=[('id', models.UUIDField(
+                default=uuid.uuid4, editable=False, primary_key=True,
+                serialize=False)),
                 ('title', models.CharField(max_length=200)),
                 ('description', models.TextField(blank=True)),
                 ('instruction_count', models.IntegerField()),
-                ('instructions', models.ManyToManyField(to='instructions.instruction')),
-            ],
-        ),
-    ]
+                ('instructions', models.ManyToManyField(
+                    to='instructions.instruction')), ],), ]

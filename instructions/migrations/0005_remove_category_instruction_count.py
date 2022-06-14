@@ -6,7 +6,8 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('instructions', '0004_instruction_user_alter_instruction_description_and_more'),
+        ('instructions',
+         '0004_instruction_user_alter_instruction_description_and_more'),
     ]
 
     operations = [
